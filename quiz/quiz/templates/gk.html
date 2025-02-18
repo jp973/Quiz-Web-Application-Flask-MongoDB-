@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Knowledge Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+    background-image: url('/static/images/bghome.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ECF0F1;
+}
+
+.container {
+    background-color: rgba(44, 62, 80, 0.85); /* Semi-transparent background */
+    padding: 50px 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 2.8em;
+    color: #1ABC9C; /* Heading color */
+}
+
+p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.quiz-info {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+.start-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 1.3em;
+    color: #ECF0F1;
+    background-color: #3498DB; /* Button color */
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #2980B9; /* Button color on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>General Knowledge Quiz</h1>
+        <p>Test your knowledge across a wide range of topics. Answer the following questions to challenge yourself and see how much you know!</p>
+
+        <div class="quiz-info">
+            <div class="info-item">
+                <span>📝 Number of Questions:</span> 10
+            </div>
+            <div class="info-item">
+                <span>🎯 Difficulty Level:</span> 
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="info-item">
+                <span>⏳ Time Limit:</span> 15 Minutes
+            </div>
+        </div>
+
+        <a href="{{ url_for('quiz1') }}" class="start-btn">Start Quiz</a>
+    </div>
+</body>
+</html>

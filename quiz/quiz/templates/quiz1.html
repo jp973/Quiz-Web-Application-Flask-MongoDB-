@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Knowledge Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        body {
+            background-color: #ecf0f1; /* Light background color */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50; /* Dark text color for readability */
+            overflow-y: auto; /* Ensure vertical scrolling is enabled */
+        }
+        
+        .quiz-container {
+            background-color: #ffffff; /* White background for quiz container */
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 700px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 50px auto; /* Center the container and add margin for scrolling */
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2980b9; /* Main heading color matching home page theme */
+            margin-bottom: 30px;
+        }
+        
+        .quiz-item {
+            margin-bottom: 25px;
+            text-align: left; /* Align questions to the left for better readability */
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #34495e; /* Subheading color for questions */
+            margin-bottom: 10px; /* Add margin below the question */
+        }
+        
+        label {
+            display: block;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .submit-btn {
+            padding: 15px 30px;
+            font-size: 1.3em;
+            color: #ffffff;
+            background-color: #2980b9; /* Button color */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1f6399; /* Darker shade on hover */
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>General Knowledge Quiz</h1>
+        <form id="quiz-form" action="{{ url_for('submit1') }}" method="post">
+
+            <input type="hidden" name="quiz_type" value="gk">
+            <!-- Question 1 -->
+            <div class="quiz-item">
+                <h3>1. What is the capital of France?</h3>
+                <label><input type="radio" name="q1" value="a"> A. Berlin</label><br>
+                <label><input type="radio" name="q1" value="b"> B. Paris</label><br>
+                <label><input type="radio" name="q1" value="c"> C. Madrid</label><br>
+                <label><input type="radio" name="q1" value="d"> D. Rome</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-item">
+                <h3>2. Who wrote "Romeo and Juliet"?</h3>
+                <label><input type="radio" name="q2" value="a"> A. Mark Twain</label><br>
+                <label><input type="radio" name="q2" value="b"> B. Charles Dickens</label><br>
+                <label><input type="radio" name="q2" value="c"> C. William Shakespeare</label><br>
+                <label><input type="radio" name="q2" value="d"> D. Jane Austen</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-item">
+                <h3>3. What is the smallest planet in our solar system?</h3>
+                <label><input type="radio" name="q3" value="a"> A. Venus</label><br>
+                <label><input type="radio" name="q3" value="b"> B. Mercury</label><br>
+                <label><input type="radio" name="q3" value="c"> C. Mars</label><br>
+                <label><input type="radio" name="q3" value="d"> D. Earth</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-item">
+                <h3>4. In which year did the Titanic sink?</h3>
+                <label><input type="radio" name="q4" value="a"> A. 1902</label><br>
+                <label><input type="radio" name="q4" value="b"> B. 1912</label><br>
+                <label><input type="radio" name="q4" value="c"> C. 1922</label><br>
+                <label><input type="radio" name="q4" value="d"> D. 1932</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-item">
+                <h3>5. Who painted the Mona Lisa?</h3>
+                <label><input type="radio" name="q5" value="a"> A. Vincent van Gogh</label><br>
+                <label><input type="radio" name="q5" value="b"> B. Leonardo da Vinci</label><br>
+                <label><input type="radio" name="q5" value="c"> C. Pablo Picasso</label><br>
+                <label><input type="radio" name="q5" value="d"> D. Claude Monet</label>
+            </div>
+
+            <!-- Additional Questions -->
+            <!-- Question 6 -->
+            <div class="quiz-item">
+                <h3>6. What is the currency of Japan?</h3>
+                <label><input type="radio" name="q6" value="a"> A. Yuan</label><br>
+                <label><input type="radio" name="q6" value="b"> B. Yen</label><br>
+                <label><input type="radio" name="q6" value="c"> C. Won</label><br>
+                <label><input type="radio" name="q6" value="d"> D. Peso</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="quiz-item">
+                <h3>7. Who discovered penicillin?</h3>
+                <label><input type="radio" name="q7" value="a"> A. Marie Curie</label><br>
+                <label><input type="radio" name="q7" value="b"> B. Albert Einstein</label><br>
+                <label><input type="radio" name="q7" value="c"> C. Alexander Fleming</label><br>
+                <label><input type="radio" name="q7" value="d"> D. Isaac Newton</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="quiz-item">
+                <h3>8. Which is the longest river in the world?</h3>
+                <label><input type="radio" name="q8" value="a"> A. Nile</label><br>
+                <label><input type="radio" name="q8" value="b"> B. Amazon</label><br>
+                <label><input type="radio" name="q8" value="c"> C. Mississippi</label><br>
+                <label><input type="radio" name="q8" value="d"> D. Yangtze</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="quiz-item">
+                <h3>9. What is the boiling point of water?</h3>
+                <label><input type="radio" name="q9" value="a"> A. 90°C</label><br>
+                <label><input type="radio" name="q9" value="b"> B. 100°C</label><br>
+                <label><input type="radio" name="q9" value="c"> C. 110°C</label><br>
+                <label><input type="radio" name="q9" value="d"> D. 120°C</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="quiz-item">
+                <h3>10. Which country is known as the Land of the Rising Sun?</h3>
+                <label><input type="radio" name="q10" value="a"> A. China</label><br>
+                <label><input type="radio" name="q10" value="b"> B. Australia</label><br>
+                <label><input type="radio" name="q10" value="c"> C. Japan</label><br>
+                <label><input type="radio" name="q10" value="d"> D. South Korea</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

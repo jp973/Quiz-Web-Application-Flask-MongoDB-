@@ -1,0 +1,78 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Library Management System</h1>
+        <nav>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('dashboard') }}">dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to the Library Management System</h2>
+    </main>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+<nav>
+    <div><h1>Quiz Master</h1> </div>
+    <div>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+     
+    </div>
+</nav>
+
+<div class="header">
+    <h1>Welcome to Quiz Master</h1>
+    <p>Your ultimate quiz platform to test your knowledge!</p>
+</div>
+
+<div class="category-container">
+    <div class="category-item">
+        <h3>General Knowledge</h3>
+       
+        <a href="{{ url_for('login') }}">Start Quiz</a>
+    </div>
+    <div class="category-item">
+        <h3>Science & Technology</h3>
+        <a href="{{ url_for('login') }}">Start Quiz</a>
+    </div>
+    <div class="category-item">
+        <h3>History</h3>
+        <a href="{{ url_for('login') }}">Start Quiz</a>
+    </div>
+</div>
+
+
+</body>
+</html>
+<!-- <div class="category-item">
+    <h3>General Knowledge</h3>
+    <a href="/start_quiz/general_knowledge">Start Quiz</a>
+</div>
+<div class="category-item">
+    <h3>Science & Technology</h3>
+    <a href="/start_quiz/science_technology">Start Quiz</a>
+</div>
+<div class="category-item">
+    <h3>History</h3>
+    <a href="/start_quiz/history">Start Quiz</a>
+</div> -->
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="results.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .results-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .results-summary {
+            margin-bottom: 20px;
+        }
+        
+        .results-summary h2 {
+            color: #5cb85c;
+        }
+        
+        .results-details {
+            margin-top: 20px;
+        }
+        
+        .results-details h3 {
+            color: #333;
+        }
+        
+        #results-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #results-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .home-btn {
+            background-color: #28a745;
+        }
+        
+        .home-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Quiz Results</h1>
+        <div class="results-summary">
+            <h2>Your Score: {{ score }}/10</h2>
+            <p>Thank you for taking the quiz! Here are your results:</p>
+        </div>
+        <div class="results-details">
+            <h3>Question Breakdown:</h3>
+            <ul id="results-list">
+                {% for q, result in results.items() %}
+                    <li>Question {{ loop.index }}: Correct answer was '{{ result.correct }}'. Your answer was '{{ result.user }}'.</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="{{ url_for('home') }}" class="btn home-btn">Home</a>
+        <a href="{{ url_for('retry') }}" class="btn">Retry Quiz</a>
+    </div>
+</body>
+</html>

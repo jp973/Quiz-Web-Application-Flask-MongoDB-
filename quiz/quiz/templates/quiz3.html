@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Quiz</title>
+    <style>
+        body {
+            background-color: #ecf0f1; /* Light background color */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50; /* Dark text color for readability */
+            overflow-y: auto; /* Ensure vertical scrolling is enabled */
+        }
+        
+        .quiz-container {
+            background-color: #ffffff; /* White background for quiz container */
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 700px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 50px auto; /* Center the container and add margin for scrolling */
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2980b9; /* Main heading color matching home page theme */
+            margin-bottom: 30px;
+        }
+        
+        .quiz-item {
+            margin-bottom: 25px;
+            text-align: left; /* Align questions to the left for better readability */
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #34495e; /* Subheading color for questions */
+            margin-bottom: 10px; /* Add margin below the question */
+        }
+        
+        label {
+            display: block;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .submit-btn {
+            padding: 15px 30px;
+            font-size: 1.3em;
+            color: #ffffff;
+            background-color: #2980b9; /* Button color */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1f6399; /* Darker shade on hover */
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>History Quiz</h1>
+        <form id="quiz-form" action="{{ url_for('submit1') }}" method="post">
+
+            <input type="hidden" name="quiz_type" value="history">
+            <!-- Question 1 -->
+            <div class="quiz-item">
+                <h3>1. Who was the first President of the United States?</h3>
+                <label><input type="radio" name="q1" value="a"> A. Abraham Lincoln</label><br>
+                <label><input type="radio" name="q1" value="b"> B. Thomas Jefferson</label><br>
+                <label><input type="radio" name="q1" value="c"> C. George Washington</label><br>
+                <label><input type="radio" name="q1" value="d"> D. John Adams</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-item">
+                <h3>2. In which year did World War I begin?</h3>
+                <label><input type="radio" name="q2" value="a"> A. 1912</label><br>
+                <label><input type="radio" name="q2" value="b"> B. 1914</label><br>
+                <label><input type="radio" name="q2" value="c"> C. 1916</label><br>
+                <label><input type="radio" name="q2" value="d"> D. 1918</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-item">
+                <h3>3. Who was the first emperor of China?</h3>
+                <label><input type="radio" name="q3" value="a"> A. Han Gaozu</label><br>
+                <label><input type="radio" name="q3" value="b"> B. Qin Shi Huang</label><br>
+                <label><input type="radio" name="q3" value="c"> C. Wu of Han</label><br>
+                <label><input type="radio" name="q3" value="d"> D. Sun Quan</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-item">
+                <h3>4. What was the name of the ship that brought the Pilgrims to America in 1620?</h3>
+                <label><input type="radio" name="q4" value="a"> A. The Pinta</label><br>
+                <label><input type="radio" name="q4" value="b"> B. The Santa Maria</label><br>
+                <label><input type="radio" name="q4" value="c"> C. The Mayflower</label><br>
+                <label><input type="radio" name="q4" value="d"> D. The Nina</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-item">
+                <h3>5. Who was the British Prime Minister during World War II?</h3>
+                <label><input type="radio" name="q5" value="a"> A. Neville Chamberlain</label><br>
+                <label><input type="radio" name="q5" value="b"> B. Winston Churchill</label><br>
+                <label><input type="radio" name="q5" value="c"> C. Clement Attlee</label><br>
+                <label><input type="radio" name="q5" value="d"> D. Stanley Baldwin</label>
+            </div>
+
+            <!-- Additional Questions -->
+            <!-- Question 6 -->
+            <div class="quiz-item">
+                <h3>6. The ancient Egyptian writing system is known as?</h3>
+                <label><input type="radio" name="q6" value="a"> A. Cuneiform</label><br>
+                <label><input type="radio" name="q6" value="b"> B. Hieroglyphics</label><br>
+                <label><input type="radio" name="q6" value="c"> C. Sanskrit</label><br>
+                <label><input type="radio" name="q6" value="d"> D. Latin</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="quiz-item">
+                <h3>7. Who was known as the "Iron Lady"?</h3>
+                <label><input type="radio" name="q7" value="a"> A. Indira Gandhi</label><br>
+                <label><input type="radio" name="q7" value="b"> B. Margaret Thatcher</label><br>
+                <label><input type="radio" name="q7" value="c"> C. Golda Meir</label><br>
+                <label><input type="radio" name="q7" value="d"> D. Angela Merkel</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="quiz-item">
+                <h3>8. Which empire was known as the "Empire on which the sun never sets"?</h3>
+                <label><input type="radio" name="q8" value="a"> A. Roman Empire</label><br>
+                <label><input type="radio" name="q8" value="b"> B. Ottoman Empire</label><br>
+                <label><input type="radio" name="q8" value="c"> C. British Empire</label><br>
+                <label><input type="radio" name="q8" value="d"> D. Mongol Empire</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="quiz-item">
+                <h3>9. The Berlin Wall fell in which year?</h3>
+                <label><input type="radio" name="q9" value="a"> A. 1985</label><br>
+                <label><input type="radio" name="q9" value="b"> B. 1987</label><br>
+                <label><input type="radio" name="q9" value="c"> C. 1989</label><br>
+                <label><input type="radio" name="q9" value="d"> D. 1991</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="quiz-item">
+                <h3>10. Who was the first man to set foot on the moon?</h3>
+                <label><input type="radio" name="q10" value="a"> A. Buzz Aldrin</label><br>
+                <label><input type="radio" name="q10" value="b"> B. Yuri Gagarin</label><br>
+                <label><input type="radio" name="q10" value="c"> C. Neil Armstrong</label><br>
+                <label><input type="radio" name="q10" value="d"> D. Michael Collins</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

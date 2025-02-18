@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science and Technology Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        body {
+            background-color: #ecf0f1; /* Light background color */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50; /* Dark text color for readability */
+            overflow-y: auto; /* Ensure vertical scrolling is enabled */
+        }
+        
+        .quiz-container {
+            background-color: #ffffff; /* White background for quiz container */
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 700px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 50px auto; /* Center the container and add margin for scrolling */
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2980b9; /* Main heading color matching home page theme */
+            margin-bottom: 30px;
+        }
+        
+        .quiz-item {
+            margin-bottom: 25px;
+            text-align: left; /* Align questions to the left for better readability */
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #34495e; /* Subheading color for questions */
+            margin-bottom: 10px; /* Add margin below the question */
+        }
+        
+        label {
+            display: block;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .submit-btn {
+            padding: 15px 30px;
+            font-size: 1.3em;
+            color: #ffffff;
+            background-color: #2980b9; /* Button color */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1f6399; /* Darker shade on hover */
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Science and Technology Quiz</h1>
+        <form id="quiz-form" action="{{ url_for('submit1') }}" method="post">
+
+            <input type="hidden" name="quiz_type" value="science">
+            <!-- Question 1 -->
+            <div class="quiz-item">
+                <h3>1. What is the chemical symbol for water?</h3>
+                <label><input type="radio" name="q1" value="a"> A. O</label><br>
+                <label><input type="radio" name="q1" value="b"> B. H2O</label><br>
+                <label><input type="radio" name="q1" value="c"> C. CO2</label><br>
+                <label><input type="radio" name="q1" value="d"> D. NaCl</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-item">
+                <h3>2. Who is known as the father of modern physics?</h3>
+                <label><input type="radio" name="q2" value="a"> A. Isaac Newton</label><br>
+                <label><input type="radio" name="q2" value="b"> B. Galileo Galilei</label><br>
+                <label><input type="radio" name="q2" value="c"> C. Albert Einstein</label><br>
+                <label><input type="radio" name="q2" value="d"> D. Niels Bohr</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-item">
+                <h3>3. What planet is known as the Red Planet?</h3>
+                <label><input type="radio" name="q3" value="a"> A. Venus</label><br>
+                <label><input type="radio" name="q3" value="b"> B. Mars</label><br>
+                <label><input type="radio" name="q3" value="c"> C. Jupiter</label><br>
+                <label><input type="radio" name="q3" value="d"> D. Saturn</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-item">
+                <h3>4. What is the speed of light in a vacuum?</h3>
+                <label><input type="radio" name="q4" value="a"> A. 150,000 km/s</label><br>
+                <label><input type="radio" name="q4" value="b"> B. 300,000 km/s</label><br>
+                <label><input type="radio" name="q4" value="c"> C. 450,000 km/s</label><br>
+                <label><input type="radio" name="q4" value="d"> D. 600,000 km/s</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-item">
+                <h3>5. Who developed the theory of general relativity?</h3>
+                <label><input type="radio" name="q5" value="a"> A. Stephen Hawking</label><br>
+                <label><input type="radio" name="q5" value="b"> B. Max Planck</label><br>
+                <label><input type="radio" name="q5" value="c"> C. Albert Einstein</label><br>
+                <label><input type="radio" name="q5" value="d"> D. Richard Feynman</label>
+            </div>
+
+            <!-- Additional Questions -->
+            <!-- Question 6 -->
+            <div class="quiz-item">
+                <h3>6. What is the powerhouse of the cell?</h3>
+                <label><input type="radio" name="q6" value="a"> A. Nucleus</label><br>
+                <label><input type="radio" name="q6" value="b"> B. Mitochondria</label><br>
+                <label><input type="radio" name="q6" value="c"> C. Ribosome</label><br>
+                <label><input type="radio" name="q6" value="d"> D. Chloroplast</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="quiz-item">
+                <h3>7. Which programming language is known as the backbone of web development?</h3>
+                <label><input type="radio" name="q7" value="a"> A. Python</label><br>
+                <label><input type="radio" name="q7" value="b"> B. JavaScript</label><br>
+                <label><input type="radio" name="q7" value="c"> C. Java</label><br>
+                <label><input type="radio" name="q7" value="d"> D. C++</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="quiz-item">
+                <h3>8. What is the largest organ in the human body?</h3>
+                <label><input type="radio" name="q8" value="a"> A. Heart</label><br>
+                <label><input type="radio" name="q8" value="b"> B. Liver</label><br>
+                <label><input type="radio" name="q8" value="c"> C. Skin</label><br>
+                <label><input type="radio" name="q8" value="d"> D. Brain</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="quiz-item">
+                <h3>9. What is the most abundant gas in Earth's atmosphere?</h3>
+                <label><input type="radio" name="q9" value="a"> A. Oxygen</label><br>
+                <label><input type="radio" name="q9" value="b"> B. Nitrogen</label><br>
+                <label><input type="radio" name="q9" value="c"> C. Carbon Dioxide</label><br>
+                <label><input type="radio" name="q9" value="d"> D. Hydrogen</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="quiz-item">
+                <h3>10. What does CPU stand for in computers?</h3>
+                <label><input type="radio" name="q10" value="a"> A. Central Processing Unit</label><br>
+                <label><input type="radio" name="q10" value="b"> B. Central Power Unit</label><br>
+                <label><input type="radio" name="q10" value="c"> C. Computer Power Unit</label><br>
+                <label><input type="radio" name="q10" value="d"> D. Central Processing Utility</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+    </div>
+</body>
+</html>
